@@ -1,0 +1,62 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "553738f1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "from bs4 import BeautifulSoup\n",
+    "import requests\n",
+    "\n",
+    "url_rotten_tomatoes = 'https://www.rottentomatoes.com/m/divergent'\n",
+    "page_rotten_tomatoes = requests.get(url_rotten_tomatoes)\n",
+    "soup_rotten_tomatoes = BeautifulSoup(page_rotten_tomatoes.text, 'html.parser')\n",
+    "\n",
+    "director = soup_rotten_tomatoes.find('a', href=\"/celebrity/neil_burger\").text.strip()\n",
+    "release_date = soup_rotten_tomatoes.find('time').text.strip()\n",
+    "genre = soup_rotten_tomatoes.find('span', class_=\"genre\").text.strip()\n",
+    "\n",
+    "url_film_affinity = 'https://www.filmaffinity.com/en/film242952.html'\n",
+    "page_film_affinity = requests.get(url_film_affinity)\n",
+    "soup_film_affinity = BeautifulSoup(page_film_affinity.text, 'html.parser')\n",
+    "\n",
+    "rating_fa = soup_film_affinity.find('div', id=\"movie-rat-avg\").text.strip()\n",
+    "critics_review_author = soup_film_affinity.find('div', itemprop='name').text.strip()\n",
+    "critics_review_text = soup_film_affinity.find('div', itemprop='reviewBody').text.strip()\n",
+    "\n",
+    "data = {\n",
+    "    \"Attribute\": [\"Director\", \"Release Date\", \"Genre\", \"FilmAffinity Rating\", \"Critics Review Author\", \"Critics Review Text\"],\n",
+    "    \"Value\": [director, release_date, genre, rating_fa, critics_review_author, critics_review_text]\n",
+    "}\n",
+    "\n",
+    "df = pd.DataFrame(data)\n",
+    "\n",
+    "print(df)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
