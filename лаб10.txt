@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[pdftex]{hyperref}
+\usepackage{amsmath,amsthm,amssymb,url,verbatim,fancyvrb}
+\usepackage{esint, mathtools}
+\title{lab10}
+\author{Sofia Mikhailova}
+\date{April 2024}
+\begin{document}
+\maketitle
+\section{Medium}
+\Large
+\begin{equation}
+1_A = \begin{cases}
+ 1 & \text{if } x\in A \\
+ 0 & \text{if } x\notin A
+\end{cases}
+\end{equation}
+\begin{equation}
+n\underbrace{\uparrow\cdots\uparrow}_n n = n \rightarrow n \rightarrow n
+\end{equation}
+\begin{align}
+1\uparrow 1 = ^{1}1 & = 1 \nonumber \\
+2\uparrow\uparrow 2 = ^{2}2 & = 4 \nonumber \\
+3\uparrow\uparrow\uparrow 3 = ^{^{^3}3}3 & =
+3\uparrow\uparrow3\uparrow\uparrow3 =
+\underbrace{3^{3^{3^{3^{3^{3^{.^{.^{.^{3}}}}}}}}}}_{3^{3^3}\text{ threes}}
+\end{align}
+\begin{equation}
+\frac{{\rm d}}{{\rm d}x} f(x) =
+\lim_{\Delta x\to 0}\frac{f(x + \Delta x) - f(x)}{\Delta x}
+\end{equation}
+\begin{equation}
+{\rm H_2O}(\ell) + {\rm H_2O}(\ell) \rightleftharpoons
+{\rm H_3O^+}(aq) + {\rm OH^-}(aq)
+\end{equation}
+\begin{equation}
+\Gamma(n + 1) \stackrel{\text{\tiny def}}{=} \int_0^\infty e^{-t} t^n {\rm d}t
+\end{equation}
+\begin{equation}
+\gcd(n,m\bmod n);\quad x\equiv y\pmod b;
+\quad x\equiv y\mod c;\quad x\equiv y\pod d
+\end{equation} \\
+\begin{align}
+\nabla \cdot \mathbf{E} & =
+\frac{\rho}{\varepsilon_0} \nonumber \\
+\nabla \cdot \mathbf{B} & = 0 \nonumber \\
+\nabla \times \mathbf{E} & =
+-\frac{\partial \mathbf{B}}{\partial t} \nonumber \\
+\nabla \times \mathbf{B} & =
+\mu_0\mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align} \\
+\begin{align}
+\oiint_{\partial V}\mathbf{E}\cdot{\rm d}\mathbf{A} & =
+\frac{Q(V)}{\varepsilon_0} \nonumber \\
+\oiint_{\partial V}\mathbf{B}\cdot{\rm d}\mathbf{A} & = 0 \nonumber \\
+\oint_{\partial S}\mathbf{E}\cdot{\rm d}\mathbf{l} & =
+-\frac{\partial \Phi_{B, S}}{\partial t} \nonumber \\
+\oint_{\partial S}\mathbf{B}\cdot{\rm d}\mathbf{l} & =
+\mu_0 I_S + \mu_0 \varepsilon_0 \frac{\partial \Phi_{E, S}}{\partial t}
+\end{align}
+\begin{equation}
+\rho_\theta =
+\begin{pmatrix}
+\cos\theta & \sin\theta \\
+-\sin\theta & \cos\theta
+\end{pmatrix} =
+\begin{bmatrix}
+\cos\theta & \sin\theta \\
+-\sin\theta & \cos\theta
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\left[ \begin{array}{c|ccc}
+1 & 0 & \cdots & 0 \\
+\hline 0 & * & \cdots & * \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & * & \cdots & *
+\end{array} \right] = \begin{array}{|c|ccc|}
+\hline 1 & 0 & \cdots & 0 \\
+\hline 0 & * & \cdots & * \\
+\vdots & \vdots &\ddots & \vdots \\
+0 & * & \cdots & * \\ \hline
+\end{array}
+\end{equation}
+\begin{equation}
+\sigma = \sqrt{\frac{1}{N} \sum_{i = 1}^{N} p_i(x_i - \bar x)^2} =
+\sqrt{\frac{\displaystyle \sum_{i = 1}^{N} p_i(x_i - \bar x)^2}{N}}
+\end{equation}
+\begin{equation}
+\varphi(n) = n\cdot
+\prod_{p\mid n \atop p\text{ prime}}\left(1 - \frac{1}{p}\right)
+\end{equation}
+\begin{equation}
+\varphi(n) = n\cdot \prod_{\mathclap{\substack{p\mid n \\ p\text{ prime}}}}
+\left(1 - \frac{1}{p}\right)
+\end{equation}
+\begin{equation}
+{}^{4}_{12}{\rm C}^{5+}_{2} \quad
+\prescript{14}{2}{{\rm C}}^{5+}_{2} \quad
+\prescript{4}{12}{{\rm C}}^{5+}_{2} \quad
+\prescript{14}{}{{\rm C}}^{5+}_{2} \quad
+\prescript{}{2}{{\rm C}}^{5+}_{2}
+\end{equation}
+\begin{align}
+{1\uparrow 1} = {^{1}\!\,1} & = 1 \nonumber \\
+2\uparrow\uparrow 2 = {^{2}\!\,2} & = 4 \nonumber \\
+3\uparrow\uparrow\uparrow 3 = \text{\raisebox{0pt}[0pt]{$^{^{^3}\!3}3$}} & =
+\text{\raisebox{0pt}[0pt]{$3\uparrow\uparrow3\uparrow\uparrow3 =
+\underbrace{3^{3^{3^{3^{3^{3^{.^{.^{.^{3}}}}}}}}}}_{3^{3^3}\text{ threes}}$}}
+\end{align}
+\end{document}

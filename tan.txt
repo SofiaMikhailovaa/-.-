@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary {angles,quotes}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+
+\title{kf,10}
+\author{Софія Міхайлова}
+\date{April 2024}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \draw[->] (-2*pi,0) -- (2*pi,0);
+  \draw[->] (0,-2*pi) -- (0,2*pi);
+  \draw[dash dot] (pi/2,-2*pi) -- (pi/2,2*pi);
+  \draw[dash dot] (-pi/2,2*pi) -- (-pi/2,-2*pi);
+  \draw[dash dot] (3*pi/2,-2*pi) -- (3*pi/2,2*pi);
+  \draw[dash dot] (-3*pi/2,2*pi) -- (-3*pi/2,-2*pi);
+  \draw (0.5 ,7) node [] {{\Large $y$}};
+  \draw (7, 0.5) node [] {{\Large $x$}};
+  \draw[color=blue, domain=-pi/2+0.2:pi/2-0.2]   plot (\x,{tan(\x r)})    node[right] {$f(x) = \tan x$};
+  \draw[color=blue, domain=pi/2+0.2:3*pi/2-0.2]   plot (\x,{tan(\x r)})    node[right] {$f(x) = \tan x$};
+  \draw[color=blue, domain=-3*pi/2+0.2:-pi/2-0.2]   plot (\x,{tan(\x r)})    node[right] {$f(x) = \tan x$};
+  
+\end{tikzpicture}
+
+\end{document}
