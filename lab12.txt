@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary {shapes.multipart}
+\title{lab12}
+\author{Софія Міхайлова}
+\date{May 2024}
+
+\begin{document}
+\begin{tikzpicture}
+    \draw (-7,-2) node[minimum size=1.5cm,draw,circle,fill=blue!20](l1) {l1};
+    \draw(-7,-7) node[minimum size=1.5cm,draw,circle,fill=blue!20] (l2) {l2};
+    \draw(-2,0) node[minimum size=1.5cm,draw,circle,fill=green!20] (B1){B1};
+    \draw(3,0) node[minimum size=1.5cm,draw,circle,fill=green!20](B2) {B2};
+    \draw(0,-2) node[rectangle split,rectangle split horizontal,draw,
+    rectangle split parts=2,text width=0.7cm,text centered,
+    rectangle split part fill={gray!20,gray!30},
+    rounded corners=0.7cm,minimum height=1.5cm, minimum width=4cm] (a) { 
+    $H_1$
+    \nodepart{two}
+    $HA1$
+    };
+    \draw(0,-7) node[rectangle split,rectangle split horizontal, draw,
+    rectangle split parts=2,text width=0.7cm,text centered,
+    rectangle split part fill={gray!20,gray!30},
+    rounded corners=0.7cm,minimum height=1.5cm, minimum width=3cm] (b) {
+    $H_2$
+    \nodepart{two} 
+    $HA2$
+    };
+  \draw(5,-2) node[minimum size=1.5cm,draw,circle split,fill=yellow!20] (c){
+    $O_1$
+    \nodepart{lower}
+    $OA1$};
+
+  ;
+    \draw(5,-7) node[minimum size=1.5cm,draw,circle split,fill=yellow!20](d) {
+    $O_2$
+    \nodepart{lower}
+    $OA2$
+  };
+   \draw[->] (l1) -- node[above]{ W1} (a) ;
+   \draw[->] (l2) -- node[above]{ W4} (b) ;
+    \draw[->] (l1) --node[above, near start] {W2} (b) ;
+   \draw[->] (l2) --node[below, near start]{W3} (a) ;
+   \draw[->] (B1) --node[above]{W5} (a) ;
+   \draw[->] (B1) --node[above, near end]{W6} (b) ;
+   \draw[->] (a) -- node[above]{W7}(c) ;
+   \draw[->] (b) -- node[above]{W10}(d) ;
+   \draw[->] (a) -- node[above, near start] {W8} (d) ;
+   \draw[->] (b) -- node[above, near start] {W9} (c) ;
+    \draw[->] (B2) -- node[above] {W11}(c) ;
+   \draw[->] (B2) -- node[above, near end] {W12}(d) ;
+    \end{tikzpicture}
+\end{document}
